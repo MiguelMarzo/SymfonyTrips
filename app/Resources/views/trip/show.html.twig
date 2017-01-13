@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Trip</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ trip.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ trip.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ trip.description }}</td>
+            </tr>
+            <tr>
+                <th>Urlpicture</th>
+                <td>{{ trip.urlPicture }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ trip.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('trip_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('trip_edit', { 'id': trip.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

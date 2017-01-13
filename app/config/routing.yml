@@ -1,0 +1,15 @@
+trip_trip:
+    resource: "@TripBundle/Controller/TripController.php"
+    type:     annotation
+
+trip_trip:
+    resource: "@TripBundle/Controller/TripController.php"
+    type:     annotation
+
+trip:
+    resource: "@TripBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

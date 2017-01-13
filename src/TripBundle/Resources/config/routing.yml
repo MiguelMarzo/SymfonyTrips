@@ -1,0 +1,3 @@
+trip_homepage:
+    path:     /
+    defaults: { _controller: TripBundle:Default:index }

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Page Content -->
+    <!-- ESTE DIV ES LO QUE VOY A REPETIR MIENTRAS HAYA RESULTADOS -->
+    {% for trip in trips %}
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src="{{ trip.urlPicture }}">
+                <div class="caption">
+                    <h4 class="pull-right">Price {{ trip.price }} €</h4>
+                    <h4><a href="{{ path('trip_show', { 'id': trip.id }) }}">Nombre del viaje: {{ trip.name }}</a>                     
+                        <a href="{{ path('trip_delete', { 'id': trip.id }) }}"><span class="glyphicon glyphicon-trash"></span></a>
+                    </h4>
+                    <p class="description">Descripción</p>
+                    <a href="{{ path('trip_show', { 'id': trip.id }) }}">Ver más...</a>
+                </div>                              
+            </div>
+        </div>
+    {% endfor %}
+    <!-- FIN DEL DIV QUE REPITO -->
+{% endblock %}
