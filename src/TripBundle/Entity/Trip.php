@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Trip
 {
+    function __construct($name, $description, $urlPicture, $price) {
+        $this->name = $name;
+        $this->description = $description;
+        $this->urlPicture = $urlPicture;
+        $this->price = $price;
+    }    
     /**
      * @var int
      *

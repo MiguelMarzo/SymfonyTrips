@@ -37,9 +37,9 @@
                     <a class="navbar-brand" href="{{ path('trip_index') }}">Viajes 4v al mejor precio</a>
                 </div>
                 <!-- FORMULARIO DE BÚSQUEDA -->
-                <form class="navbar-form navbar-right" role="search" method="post" action="index.php">
+                <form class="navbar-form navbar-right" role="search" method="post" action="{{ path('search_trip') }}">
                     <div class="form-group">
-                        <input type="text" name="trip" class="form-control" placeholder="Buscar..." value="">
+                        <input type="text" name="searchTerm" class="form-control" placeholder="Buscar..." value="">
                     </div>
                     <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                 </form>
@@ -56,10 +56,9 @@
                 <div class="col-md-3">
                     <p class="lead">Tu agencia de viajes</p>
                     <div class="list-group">
-                        <a href="{{ path('trip_new') }}" class="list-group-item">Sugiérenos un viaje</a>
+                        <a href="{{ path('trip_create') }}" class="list-group-item">Sugiérenos un viaje</a>
                     </div>
                 </div>
-
                 <div class="col-md-9">
 
                     <div class="row carousel-holder">

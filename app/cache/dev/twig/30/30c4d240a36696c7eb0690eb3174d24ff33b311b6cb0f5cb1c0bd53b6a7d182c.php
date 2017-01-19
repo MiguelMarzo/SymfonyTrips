@@ -21,49 +21,67 @@ class __TwigTemplate_9f7743bed64a15a800abda37155f05fc86356cc0b85f2b44f58e9dcde78
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f717dc8b160bdd4a15db6afd23077b5a99a37465b2320bba0e4f5b1922c3ba3e = $this->env->getExtension("native_profiler");
-        $__internal_f717dc8b160bdd4a15db6afd23077b5a99a37465b2320bba0e4f5b1922c3ba3e->enter($__internal_f717dc8b160bdd4a15db6afd23077b5a99a37465b2320bba0e4f5b1922c3ba3e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "trip/new.html.twig"));
+        $__internal_7f988c216310d088dcd1411c4d3e117ebff0c37e027a62e12408bec75b364805 = $this->env->getExtension("native_profiler");
+        $__internal_7f988c216310d088dcd1411c4d3e117ebff0c37e027a62e12408bec75b364805->enter($__internal_7f988c216310d088dcd1411c4d3e117ebff0c37e027a62e12408bec75b364805_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "trip/new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_f717dc8b160bdd4a15db6afd23077b5a99a37465b2320bba0e4f5b1922c3ba3e->leave($__internal_f717dc8b160bdd4a15db6afd23077b5a99a37465b2320bba0e4f5b1922c3ba3e_prof);
+        $__internal_7f988c216310d088dcd1411c4d3e117ebff0c37e027a62e12408bec75b364805->leave($__internal_7f988c216310d088dcd1411c4d3e117ebff0c37e027a62e12408bec75b364805_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_1d51b2f911e3deaa7df64e1f6348d7cba895ad3453750e01bbbe9a04ec8f43ad = $this->env->getExtension("native_profiler");
-        $__internal_1d51b2f911e3deaa7df64e1f6348d7cba895ad3453750e01bbbe9a04ec8f43ad->enter($__internal_1d51b2f911e3deaa7df64e1f6348d7cba895ad3453750e01bbbe9a04ec8f43ad_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_915b04a19962b668b27c4f07ab1fc966122f3b24df2a32cd47d9e16389623855 = $this->env->getExtension("native_profiler");
+        $__internal_915b04a19962b668b27c4f07ab1fc966122f3b24df2a32cd47d9e16389623855->enter($__internal_915b04a19962b668b27c4f07ab1fc966122f3b24df2a32cd47d9e16389623855_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Trip creation</h1>
 
-    ";
+    <form class=\"form-horizontal\" method=\"post\" action=\"";
         // line 6
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
-        echo "
-        ";
-        // line 7
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
-        echo "
-        <input type=\"submit\" value=\"Create\" />
-    ";
-        // line 9
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
-        echo "
+        echo $this->env->getExtension('routing')->getPath("trip_new");
+        echo "\">
+        <input type=\"hidden\" name=\"id\"/>
+        <div class=\"form-group\">
+            <label for=\"title\" class=\"col-sm-2 control-label\">Nombre:</label>
+            <div class=\"col-sm-10\">
+                <input type=\"text\" class=\"form-control\" name=\"name\" id=\"name\" placeholder=\"Name\">
+            </div>
+        </div>
+        <div class=\"form-group\">
+            <label for=\"author\" class=\"col-sm-2 control-label\">Descripción:</label>
+            <div class=\"col-sm-10\">
+                <input type=\"text\" class=\"form-control\" id=\"description\" name=\"description\" placeholder=\"Descripción\">
+            </div>
+        </div>
+        <div class=\"form-group\">
+            <label for=\"cover\" class=\"col-sm-2 control-label\">Url imagen:</label>
+            <div class=\"col-sm-10\">
+                <input type=\"url\" class=\"form-control\" id=\"url\" name=\"url\" placeholder=\"URL de la imagen\">
+            </div>
+        </div>
+        <div class=\"form-group\">
+            <label for=\"author\" class=\"col-sm-2 control-label\">Precio:</label>
+            <div class=\"col-sm-10\">
+                <input type=\"text\" class=\"form-control\" id=\"price\" name=\"price\" placeholder=\"Precio\">
+            </div>
+        </div>
+        <div class=\"form-group\">
+            <div class=\"col-sm-offset-2 col-sm-10\">
+                <button type=\"submit\" class=\"btn btn-success pull-right\">Añadir</button>
+            </div>
+        </div>
+    </form>
 
-    <ul>
-        <li>
-            <a href=\"";
-        // line 13
+<a href=\"";
+        // line 39
         echo $this->env->getExtension('routing')->getPath("trip_index");
-        echo "\">Back to the list</a>
-        </li>
-    </ul>
+        echo "\" class=\"btn btn-sm btn-default\">Back to the list</a>
 ";
         
-        $__internal_1d51b2f911e3deaa7df64e1f6348d7cba895ad3453750e01bbbe9a04ec8f43ad->leave($__internal_1d51b2f911e3deaa7df64e1f6348d7cba895ad3453750e01bbbe9a04ec8f43ad_prof);
+        $__internal_915b04a19962b668b27c4f07ab1fc966122f3b24df2a32cd47d9e16389623855->leave($__internal_915b04a19962b668b27c4f07ab1fc966122f3b24df2a32cd47d9e16389623855_prof);
 
     }
 
@@ -79,7 +97,7 @@ class __TwigTemplate_9f7743bed64a15a800abda37155f05fc86356cc0b85f2b44f58e9dcde78
 
     public function getDebugInfo()
     {
-        return array (  60 => 13,  53 => 9,  48 => 7,  44 => 6,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  80 => 39,  44 => 6,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
@@ -87,15 +105,39 @@ class __TwigTemplate_9f7743bed64a15a800abda37155f05fc86356cc0b85f2b44f58e9dcde78
 /* {% block body %}*/
 /*     <h1>Trip creation</h1>*/
 /* */
-/*     {{ form_start(form) }}*/
-/*         {{ form_widget(form) }}*/
-/*         <input type="submit" value="Create" />*/
-/*     {{ form_end(form) }}*/
+/*     <form class="form-horizontal" method="post" action="{{ path('trip_new') }}">*/
+/*         <input type="hidden" name="id"/>*/
+/*         <div class="form-group">*/
+/*             <label for="title" class="col-sm-2 control-label">Nombre:</label>*/
+/*             <div class="col-sm-10">*/
+/*                 <input type="text" class="form-control" name="name" id="name" placeholder="Name">*/
+/*             </div>*/
+/*         </div>*/
+/*         <div class="form-group">*/
+/*             <label for="author" class="col-sm-2 control-label">Descripción:</label>*/
+/*             <div class="col-sm-10">*/
+/*                 <input type="text" class="form-control" id="description" name="description" placeholder="Descripción">*/
+/*             </div>*/
+/*         </div>*/
+/*         <div class="form-group">*/
+/*             <label for="cover" class="col-sm-2 control-label">Url imagen:</label>*/
+/*             <div class="col-sm-10">*/
+/*                 <input type="url" class="form-control" id="url" name="url" placeholder="URL de la imagen">*/
+/*             </div>*/
+/*         </div>*/
+/*         <div class="form-group">*/
+/*             <label for="author" class="col-sm-2 control-label">Precio:</label>*/
+/*             <div class="col-sm-10">*/
+/*                 <input type="text" class="form-control" id="price" name="price" placeholder="Precio">*/
+/*             </div>*/
+/*         </div>*/
+/*         <div class="form-group">*/
+/*             <div class="col-sm-offset-2 col-sm-10">*/
+/*                 <button type="submit" class="btn btn-success pull-right">Añadir</button>*/
+/*             </div>*/
+/*         </div>*/
+/*     </form>*/
 /* */
-/*     <ul>*/
-/*         <li>*/
-/*             <a href="{{ path('trip_index') }}">Back to the list</a>*/
-/*         </li>*/
-/*     </ul>*/
+/* <a href="{{ path('trip_index') }}" class="btn btn-sm btn-default">Back to the list</a>*/
 /* {% endblock %}*/
 /* */

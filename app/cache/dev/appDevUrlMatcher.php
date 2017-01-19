@@ -121,16 +121,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_trip_index:
 
-            // trip_new
-            if ($pathinfo === '/trip/new') {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_trip_new;
+            if (0 === strpos($pathinfo, '/trip/trip')) {
+                // trip_create
+                if ($pathinfo === '/trip/trip/create') {
+                    return array (  '_controller' => 'TripBundle\\Controller\\TripController::createAction',  '_route' => 'trip_create',);
                 }
 
-                return array (  '_controller' => 'TripBundle\\Controller\\TripController::newAction',  '_route' => 'trip_new',);
+                // trip_new
+                if ($pathinfo === '/trip/trip/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_trip_new;
+                    }
+
+                    return array (  '_controller' => 'TripBundle\\Controller\\TripController::newAction',  '_route' => 'trip_new',);
+                }
+                not_trip_new:
+
             }
-            not_trip_new:
 
             // trip_show
             if (preg_match('#^/trip/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
@@ -160,15 +168,20 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // trip_delete
-            if (preg_match('#^/trip/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
+            if (preg_match('#^/trip/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
                     goto not_trip_delete;
                 }
 
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'trip_delete')), array (  '_controller' => 'TripBundle\\Controller\\TripController::deleteAction',));
             }
             not_trip_delete:
+
+            // search_trip
+            if ($pathinfo === '/trip/trip/search') {
+                return array (  '_controller' => 'TripBundle\\Controller\\TripController::searchAction',  '_route' => 'search_trip',);
+            }
 
         }
 

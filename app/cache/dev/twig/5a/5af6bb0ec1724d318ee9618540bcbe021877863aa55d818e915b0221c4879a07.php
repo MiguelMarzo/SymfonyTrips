@@ -21,20 +21,20 @@ class __TwigTemplate_0594cec72bede3706888f327bc8941b613e41a2a9ae74389062e630f361
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_871957e7a9e7ce50164999293d794b8e9865ee899315601acf30b8683eb263e6 = $this->env->getExtension("native_profiler");
-        $__internal_871957e7a9e7ce50164999293d794b8e9865ee899315601acf30b8683eb263e6->enter($__internal_871957e7a9e7ce50164999293d794b8e9865ee899315601acf30b8683eb263e6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "trip/edit.html.twig"));
+        $__internal_250be13d367f09c61e1650e53f0ab0b48eb7d58d227beb67147fd1a574fdf793 = $this->env->getExtension("native_profiler");
+        $__internal_250be13d367f09c61e1650e53f0ab0b48eb7d58d227beb67147fd1a574fdf793->enter($__internal_250be13d367f09c61e1650e53f0ab0b48eb7d58d227beb67147fd1a574fdf793_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "trip/edit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_871957e7a9e7ce50164999293d794b8e9865ee899315601acf30b8683eb263e6->leave($__internal_871957e7a9e7ce50164999293d794b8e9865ee899315601acf30b8683eb263e6_prof);
+        $__internal_250be13d367f09c61e1650e53f0ab0b48eb7d58d227beb67147fd1a574fdf793->leave($__internal_250be13d367f09c61e1650e53f0ab0b48eb7d58d227beb67147fd1a574fdf793_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_d1551f2b787d9572349d2e6d37e6d6cbd74dab6bb7654541656da103a321ce1b = $this->env->getExtension("native_profiler");
-        $__internal_d1551f2b787d9572349d2e6d37e6d6cbd74dab6bb7654541656da103a321ce1b->enter($__internal_d1551f2b787d9572349d2e6d37e6d6cbd74dab6bb7654541656da103a321ce1b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_d811e6e703e76ed62b8ba67f19dd51f2fcdd554a2e608172fc7a10e02b4fcb2a = $this->env->getExtension("native_profiler");
+        $__internal_d811e6e703e76ed62b8ba67f19dd51f2fcdd554a2e608172fc7a10e02b4fcb2a->enter($__internal_d811e6e703e76ed62b8ba67f19dd51f2fcdd554a2e608172fc7a10e02b4fcb2a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Trip edit</h1>
@@ -94,14 +94,9 @@ class __TwigTemplate_0594cec72bede3706888f327bc8941b613e41a2a9ae74389062e630f361
         // line 39
         echo $this->env->getExtension('routing')->getPath("trip_index");
         echo "\" class=\"btn btn-sm btn-default\">Back to the list</a>
-
-
-
-
-
 ";
         
-        $__internal_d1551f2b787d9572349d2e6d37e6d6cbd74dab6bb7654541656da103a321ce1b->leave($__internal_d1551f2b787d9572349d2e6d37e6d6cbd74dab6bb7654541656da103a321ce1b_prof);
+        $__internal_d811e6e703e76ed62b8ba67f19dd51f2fcdd554a2e608172fc7a10e02b4fcb2a->leave($__internal_d811e6e703e76ed62b8ba67f19dd51f2fcdd554a2e608172fc7a10e02b4fcb2a_prof);
 
     }
 
@@ -159,10 +154,5 @@ class __TwigTemplate_0594cec72bede3706888f327bc8941b613e41a2a9ae74389062e630f361
 /*     </form>*/
 /* */
 /* <a href="{{ path('trip_index') }}" class="btn btn-sm btn-default">Back to the list</a>*/
-/* */
-/* */
-/* */
-/* */
-/* */
 /* {% endblock %}*/
 /* */

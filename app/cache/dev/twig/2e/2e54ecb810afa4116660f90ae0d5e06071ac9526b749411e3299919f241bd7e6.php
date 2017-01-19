@@ -17,8 +17,8 @@ class __TwigTemplate_f5861294a911bbf698b2a43a4b2142b0e235a25c8309c32f590af3204bf
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a5d21de9c38925dc4e02e25ecc8c5f7550e72cce964e838b465e0f57efb6c2ce = $this->env->getExtension("native_profiler");
-        $__internal_a5d21de9c38925dc4e02e25ecc8c5f7550e72cce964e838b465e0f57efb6c2ce->enter($__internal_a5d21de9c38925dc4e02e25ecc8c5f7550e72cce964e838b465e0f57efb6c2ce_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_5634b9ea4eae69906b8a082f8e292ccdc580ec44eb4885ee619f30ba1bcc3266 = $this->env->getExtension("native_profiler");
+        $__internal_5634b9ea4eae69906b8a082f8e292ccdc580ec44eb4885ee619f30ba1bcc3266->enter($__internal_5634b9ea4eae69906b8a082f8e292ccdc580ec44eb4885ee619f30ba1bcc3266_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -72,9 +72,12 @@ class __TwigTemplate_f5861294a911bbf698b2a43a4b2142b0e235a25c8309c32f590af3204bf
         echo "\">Viajes 4v al mejor precio</a>
                 </div>
                 <!-- FORMULARIO DE BÚSQUEDA -->
-                <form class=\"navbar-form navbar-right\" role=\"search\" method=\"post\" action=\"index.php\">
+                <form class=\"navbar-form navbar-right\" role=\"search\" method=\"post\" action=\"";
+        // line 40
+        echo $this->env->getExtension('routing')->getPath("search_trip");
+        echo "\">
                     <div class=\"form-group\">
-                        <input type=\"text\" name=\"trip\" class=\"form-control\" placeholder=\"Buscar...\" value=\"\">
+                        <input type=\"text\" name=\"searchTerm\" class=\"form-control\" placeholder=\"Buscar...\" value=\"\">
                     </div>
                     <button type=\"submit\" class=\"btn btn-default\"><span class=\"glyphicon glyphicon-search\"></span></button>
                 </form>
@@ -93,33 +96,32 @@ class __TwigTemplate_f5861294a911bbf698b2a43a4b2142b0e235a25c8309c32f590af3204bf
                     <div class=\"list-group\">
                         <a href=\"";
         // line 59
-        echo $this->env->getExtension('routing')->getPath("trip_new");
+        echo $this->env->getExtension('routing')->getPath("trip_create");
         echo "\" class=\"list-group-item\">Sugiérenos un viaje</a>
                     </div>
                 </div>
-
                 <div class=\"col-md-9\">
 
                     <div class=\"row carousel-holder\">
 
                         <div class=\"col-md-12\">
                             <img class=\"slide-image img-rounded\" src=\"";
-        // line 68
+        // line 67
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/framework/img/logo.png"), "html", null, true);
         echo "\" alt=\"\">
                         </div>
                     </div>
                 </div>
             ";
-        // line 72
+        // line 71
         $this->displayBlock('body', $context, $blocks);
-        // line 73
+        // line 72
         echo "
 
             ";
-        // line 75
+        // line 74
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 82
+        // line 81
         echo "
         </div>
 
@@ -140,42 +142,42 @@ class __TwigTemplate_f5861294a911bbf698b2a43a4b2142b0e235a25c8309c32f590af3204bf
 </html>
 ";
         
-        $__internal_a5d21de9c38925dc4e02e25ecc8c5f7550e72cce964e838b465e0f57efb6c2ce->leave($__internal_a5d21de9c38925dc4e02e25ecc8c5f7550e72cce964e838b465e0f57efb6c2ce_prof);
+        $__internal_5634b9ea4eae69906b8a082f8e292ccdc580ec44eb4885ee619f30ba1bcc3266->leave($__internal_5634b9ea4eae69906b8a082f8e292ccdc580ec44eb4885ee619f30ba1bcc3266_prof);
 
     }
 
-    // line 72
+    // line 71
     public function block_body($context, array $blocks = array())
     {
-        $__internal_9d0018c104559c0d538228bceb6dac3b92322b3056eb536471073dc05a6ae654 = $this->env->getExtension("native_profiler");
-        $__internal_9d0018c104559c0d538228bceb6dac3b92322b3056eb536471073dc05a6ae654->enter($__internal_9d0018c104559c0d538228bceb6dac3b92322b3056eb536471073dc05a6ae654_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_21719dc29c037b893647f330cf43c93a66284d6e32e037c321f6804985911d66 = $this->env->getExtension("native_profiler");
+        $__internal_21719dc29c037b893647f330cf43c93a66284d6e32e037c321f6804985911d66->enter($__internal_21719dc29c037b893647f330cf43c93a66284d6e32e037c321f6804985911d66_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         
-        $__internal_9d0018c104559c0d538228bceb6dac3b92322b3056eb536471073dc05a6ae654->leave($__internal_9d0018c104559c0d538228bceb6dac3b92322b3056eb536471073dc05a6ae654_prof);
+        $__internal_21719dc29c037b893647f330cf43c93a66284d6e32e037c321f6804985911d66->leave($__internal_21719dc29c037b893647f330cf43c93a66284d6e32e037c321f6804985911d66_prof);
 
     }
 
-    // line 75
+    // line 74
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_c925166e5bdec1053d82d04df227684bdc3496cbfc7d31634f639814c0d9c7ce = $this->env->getExtension("native_profiler");
-        $__internal_c925166e5bdec1053d82d04df227684bdc3496cbfc7d31634f639814c0d9c7ce->enter($__internal_c925166e5bdec1053d82d04df227684bdc3496cbfc7d31634f639814c0d9c7ce_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_ee1b3c971fcbbbf0e5721ca2b502c2ef234a0b97c90e778be9608ea872462373 = $this->env->getExtension("native_profiler");
+        $__internal_ee1b3c971fcbbbf0e5721ca2b502c2ef234a0b97c90e778be9608ea872462373->enter($__internal_ee1b3c971fcbbbf0e5721ca2b502c2ef234a0b97c90e778be9608ea872462373_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 76
+        // line 75
         echo "                <!-- jQuery -->
                 <script src=\"";
-        // line 77
+        // line 76
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/framework/js/jquery.js"), "html", null, true);
         echo "\"></script>
 
                 <!-- Bootstrap Core JavaScript -->
                 <script src=\"";
-        // line 80
+        // line 79
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bundles/framework/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
             ";
         
-        $__internal_c925166e5bdec1053d82d04df227684bdc3496cbfc7d31634f639814c0d9c7ce->leave($__internal_c925166e5bdec1053d82d04df227684bdc3496cbfc7d31634f639814c0d9c7ce_prof);
+        $__internal_ee1b3c971fcbbbf0e5721ca2b502c2ef234a0b97c90e778be9608ea872462373->leave($__internal_ee1b3c971fcbbbf0e5721ca2b502c2ef234a0b97c90e778be9608ea872462373_prof);
 
     }
 
@@ -191,7 +193,7 @@ class __TwigTemplate_f5861294a911bbf698b2a43a4b2142b0e235a25c8309c32f590af3204bf
 
     public function getDebugInfo()
     {
-        return array (  174 => 80,  168 => 77,  165 => 76,  159 => 75,  148 => 72,  123 => 82,  121 => 75,  117 => 73,  115 => 72,  108 => 68,  96 => 59,  71 => 37,  52 => 21,  46 => 18,  40 => 15,  24 => 1,);
+        return array (  176 => 79,  170 => 76,  167 => 75,  161 => 74,  150 => 71,  125 => 81,  123 => 74,  119 => 72,  117 => 71,  110 => 67,  99 => 59,  77 => 40,  71 => 37,  52 => 21,  46 => 18,  40 => 15,  24 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -233,9 +235,9 @@ class __TwigTemplate_f5861294a911bbf698b2a43a4b2142b0e235a25c8309c32f590af3204bf
 /*                     <a class="navbar-brand" href="{{ path('trip_index') }}">Viajes 4v al mejor precio</a>*/
 /*                 </div>*/
 /*                 <!-- FORMULARIO DE BÚSQUEDA -->*/
-/*                 <form class="navbar-form navbar-right" role="search" method="post" action="index.php">*/
+/*                 <form class="navbar-form navbar-right" role="search" method="post" action="{{ path('search_trip') }}">*/
 /*                     <div class="form-group">*/
-/*                         <input type="text" name="trip" class="form-control" placeholder="Buscar..." value="">*/
+/*                         <input type="text" name="searchTerm" class="form-control" placeholder="Buscar..." value="">*/
 /*                     </div>*/
 /*                     <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>*/
 /*                 </form>*/
@@ -252,10 +254,9 @@ class __TwigTemplate_f5861294a911bbf698b2a43a4b2142b0e235a25c8309c32f590af3204bf
 /*                 <div class="col-md-3">*/
 /*                     <p class="lead">Tu agencia de viajes</p>*/
 /*                     <div class="list-group">*/
-/*                         <a href="{{ path('trip_new') }}" class="list-group-item">Sugiérenos un viaje</a>*/
+/*                         <a href="{{ path('trip_create') }}" class="list-group-item">Sugiérenos un viaje</a>*/
 /*                     </div>*/
 /*                 </div>*/
-/* */
 /*                 <div class="col-md-9">*/
 /* */
 /*                     <div class="row carousel-holder">*/

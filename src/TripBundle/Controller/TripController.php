@@ -33,28 +33,29 @@ class TripController extends Controller {
     }
 
     /**
+     * Muestra el formulario de creación de libros.
+     * 
+     * @Route("/trip/create", name="trip_create")
+     */
+    public function createAction() {
+        return $this->render('trip/new.html.twig');
+    }
+
+    /**
      * Creates a new Trip entity.
      *
-     * @Route("/new", name="trip_new")
+     * @Route("/trip/new", name="trip_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request) {
-        $trip = new Trip();
-        $form = $this->createForm(new TripType(), $trip);
-        $form->handleRequest($request);
+        $postData = $request->request;
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($trip);
-            $em->flush();
+        $trip = new Trip($postData->get("name"), $postData->get("description"), $postData->get("url"), $postData->get("price"));
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($trip);
+        $em->flush();
 
-            return $this->redirectToRoute('trip_show', array('id' => $trip->getId()));
-        }
-
-        return $this->render('trip/new.html.twig', array(
-                    'trip' => $trip,
-                    'form' => $form->createView(),
-        ));
+        return $this->forward('TripBundle:Trip:index');
     }
 
     /**
@@ -64,11 +65,8 @@ class TripController extends Controller {
      * @Method("GET")
      */
     public function showAction(Trip $trip) {
-        $deleteForm = $this->createDeleteForm($trip);
-
         return $this->render('trip/show.html.twig', array(
                     'trip' => $trip,
-                    'delete_form' => $deleteForm->createView(),
         ));
     }
 
@@ -113,8 +111,8 @@ class TripController extends Controller {
     /**
      * Deletes a Trip entity.
      *
-     * @Route("/{id}", name="trip_delete")
-     * @Method("DELETE")
+     * @Route("/{id}/delete", name="trip_delete")
+     * @Method({"GET", "POST"})
      */
     public function deleteAction($id) {
         $trip = $this->getDoctrine()->getRepository('TripBundle:Trip')
@@ -127,4 +125,30 @@ class TripController extends Controller {
             return $this->forward('TripBundle:Trip:index');
         }
     }
+
+    /**
+     * Busca trips por nombre.
+     * 
+     * @Route("/trip/search", name="search_trip")
+     */
+    public function searchAction(Request $request) {
+        $trips = array();
+        $searchTerm = $request->get('searchTerm');
+        $em = $this->getDoctrine();
+
+        //Si la cadena de búsqueda no está definida o es vacía
+        if (!isset($searchTerm) || trim($searchTerm) === '') {
+            $trips = $em->getRepository('TripBundle:Trip')
+                    ->findAll();
+        } else {
+            //Buscar trips cuyo título contenga la cadena de búsqueda
+            $trips = $em->getRepository("TripBundle:Trip")->createQueryBuilder('b')
+                            ->where('b.name LIKE :searchTerm')
+                            ->setParameter("searchTerm", '%' . $searchTerm . '%')
+                            ->getQuery()->getResult();
+        }
+
+        return $this->render('trip/index.html.twig', array('trips' => $trips));
+    }
+
 }

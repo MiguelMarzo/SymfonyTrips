@@ -3,14 +3,38 @@
 {% block body %}
     <h1>Trip creation</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    <form class="form-horizontal" method="post" action="{{ path('trip_new') }}">
+        <input type="hidden" name="id"/>
+        <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">Nombre:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="author" class="col-sm-2 control-label">Descripción:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="description" name="description" placeholder="Descripción">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="cover" class="col-sm-2 control-label">Url imagen:</label>
+            <div class="col-sm-10">
+                <input type="url" class="form-control" id="url" name="url" placeholder="URL de la imagen">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="author" class="col-sm-2 control-label">Precio:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="price" name="price" placeholder="Precio">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success pull-right">Añadir</button>
+            </div>
+        </div>
+    </form>
 
-    <ul>
-        <li>
-            <a href="{{ path('trip_index') }}">Back to the list</a>
-        </li>
-    </ul>
+<a href="{{ path('trip_index') }}" class="btn btn-sm btn-default">Back to the list</a>
 {% endblock %}
