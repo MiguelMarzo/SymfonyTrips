@@ -21,92 +21,78 @@ class __TwigTemplate_be073d7a4adc847d77febd04df9f64bc3768f4972d01a48e90dc2fc460b
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b889b3e135acddb23ac788544eaba940fa68c1ab539ba4c8fa5beaff8d38b835 = $this->env->getExtension("native_profiler");
-        $__internal_b889b3e135acddb23ac788544eaba940fa68c1ab539ba4c8fa5beaff8d38b835->enter($__internal_b889b3e135acddb23ac788544eaba940fa68c1ab539ba4c8fa5beaff8d38b835_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "trip/show.html.twig"));
+        $__internal_247ad3eac5a2b0dd38718183a004c6b8151a56564b3b18ba3e5d4bcca91eb9de = $this->env->getExtension("native_profiler");
+        $__internal_247ad3eac5a2b0dd38718183a004c6b8151a56564b3b18ba3e5d4bcca91eb9de->enter($__internal_247ad3eac5a2b0dd38718183a004c6b8151a56564b3b18ba3e5d4bcca91eb9de_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "trip/show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_b889b3e135acddb23ac788544eaba940fa68c1ab539ba4c8fa5beaff8d38b835->leave($__internal_b889b3e135acddb23ac788544eaba940fa68c1ab539ba4c8fa5beaff8d38b835_prof);
+        $__internal_247ad3eac5a2b0dd38718183a004c6b8151a56564b3b18ba3e5d4bcca91eb9de->leave($__internal_247ad3eac5a2b0dd38718183a004c6b8151a56564b3b18ba3e5d4bcca91eb9de_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_98a835f8e4fc85a821097215b690ad2d173739562b8e48bd921d791059215bb8 = $this->env->getExtension("native_profiler");
-        $__internal_98a835f8e4fc85a821097215b690ad2d173739562b8e48bd921d791059215bb8->enter($__internal_98a835f8e4fc85a821097215b690ad2d173739562b8e48bd921d791059215bb8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_45d90f6163c697f21c601ee1bbcfb7dc470a3ea7043f640221b19a2afe7c100b = $this->env->getExtension("native_profiler");
+        $__internal_45d90f6163c697f21c601ee1bbcfb7dc470a3ea7043f640221b19a2afe7c100b->enter($__internal_45d90f6163c697f21c601ee1bbcfb7dc470a3ea7043f640221b19a2afe7c100b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "    <h1>Trip</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>";
+    <div class=\"container table-responsive\">
+        <table class=\"table table-sm table-borderless\">
+            <tbody>
+                <tr>
+                    <td><h3>Nombre:</h3></td>
+                    <td><h3>";
         // line 10
-        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["trip"]) ? $context["trip"] : $this->getContext($context, "trip")), "id", array()), "html", null, true);
-        echo "</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>";
-        // line 14
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["trip"]) ? $context["trip"] : $this->getContext($context, "trip")), "name", array()), "html", null, true);
-        echo "</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>";
-        // line 18
+        echo "</h3></td>
+                </tr>
+                <tr>
+                    <td><h3>Descripción:</h3></td>
+                    <td><h3>";
+        // line 14
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["trip"]) ? $context["trip"] : $this->getContext($context, "trip")), "description", array()), "html", null, true);
-        echo "</td>
-            </tr>
-            <tr>
-                <th>Urlpicture</th>
-                <td>";
-        // line 22
+        echo "</h3></td>
+                </tr>
+                <tr>
+                    <td><img src=\"";
+        // line 17
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["trip"]) ? $context["trip"] : $this->getContext($context, "trip")), "urlPicture", array()), "html", null, true);
-        echo "</td>
-            </tr>
-            <tr>
-                <th>Price</th>
-                <td>";
-        // line 26
+        echo "\" class=\"img-circle\"/></td>
+                    <td><h4>Precio:</h4> ";
+        // line 18
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["trip"]) ? $context["trip"] : $this->getContext($context, "trip")), "price", array()), "html", null, true);
-        echo "</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href=\"";
-        // line 33
+        echo " <br/><br/><br/><br/><br/><br/>
+                        <ul class=\"list-group\">
+                            <li class=\"list-group-item\">
+                                <a href=\"";
+        // line 21
         echo $this->env->getExtension('routing')->getPath("trip_index");
-        echo "\">Back to the list</a>
-        </li>
-        <li>
-            <a href=\"";
-        // line 36
+        echo "\" class=\"btn btn-sm btn-default\">Back to the list</a>
+                            </li>
+                            <li class=\"list-group-item\">
+                                <a href=\"";
+        // line 24
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("trip_edit", array("id" => $this->getAttribute((isset($context["trip"]) ? $context["trip"] : $this->getContext($context, "trip")), "id", array()))), "html", null, true);
-        echo "\">Edit</a>
-        </li>
-        <li>
-            ";
-        // line 39
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
-        echo "
-                <input type=\"submit\" value=\"Delete\">
-            ";
-        // line 41
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
-        echo "
-        </li>
-    </ul>
+        echo "\" class=\"btn btn-sm btn-default\">Edit</a>
+                            </li>
+                            <li class=\"list-group-item\">
+                                <a href=\"";
+        // line 27
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("trip_delete", array("id" => $this->getAttribute((isset($context["trip"]) ? $context["trip"] : $this->getContext($context, "trip")), "id", array()))), "html", null, true);
+        echo "\" class=\"btn btn-sm btn-default\">Delete</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 ";
         
-        $__internal_98a835f8e4fc85a821097215b690ad2d173739562b8e48bd921d791059215bb8->leave($__internal_98a835f8e4fc85a821097215b690ad2d173739562b8e48bd921d791059215bb8_prof);
+        $__internal_45d90f6163c697f21c601ee1bbcfb7dc470a3ea7043f640221b19a2afe7c100b->leave($__internal_45d90f6163c697f21c601ee1bbcfb7dc470a3ea7043f640221b19a2afe7c100b_prof);
 
     }
 
@@ -122,51 +108,43 @@ class __TwigTemplate_be073d7a4adc847d77febd04df9f64bc3768f4972d01a48e90dc2fc460b
 
     public function getDebugInfo()
     {
-        return array (  103 => 41,  98 => 39,  92 => 36,  86 => 33,  76 => 26,  69 => 22,  62 => 18,  55 => 14,  48 => 10,  40 => 4,  34 => 3,  11 => 1,);
+        return array (  83 => 27,  77 => 24,  71 => 21,  65 => 18,  61 => 17,  55 => 14,  48 => 10,  40 => 4,  34 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* */
 /* {% block body %}*/
 /*     <h1>Trip</h1>*/
+/*     <div class="container table-responsive">*/
+/*         <table class="table table-sm table-borderless">*/
+/*             <tbody>*/
+/*                 <tr>*/
+/*                     <td><h3>Nombre:</h3></td>*/
+/*                     <td><h3>{{ trip.name }}</h3></td>*/
+/*                 </tr>*/
+/*                 <tr>*/
+/*                     <td><h3>Descripción:</h3></td>*/
+/*                     <td><h3>{{ trip.description }}</h3></td>*/
+/*                 </tr>*/
+/*                 <tr>*/
+/*                     <td><img src="{{ trip.urlPicture }}" class="img-circle"/></td>*/
+/*                     <td><h4>Precio:</h4> {{ trip.price }} <br/><br/><br/><br/><br/><br/>*/
+/*                         <ul class="list-group">*/
+/*                             <li class="list-group-item">*/
+/*                                 <a href="{{ path('trip_index') }}" class="btn btn-sm btn-default">Back to the list</a>*/
+/*                             </li>*/
+/*                             <li class="list-group-item">*/
+/*                                 <a href="{{ path('trip_edit', { 'id': trip.id }) }}" class="btn btn-sm btn-default">Edit</a>*/
+/*                             </li>*/
+/*                             <li class="list-group-item">*/
+/*                                 <a href="{{ path('trip_delete', { 'id': trip.id }) }}" class="btn btn-sm btn-default">Delete</a>*/
+/*                             </li>*/
+/*                         </ul>*/
+/*                     </td>*/
+/*                 </tr>*/
+/*             </tbody>*/
+/*         </table>*/
+/*     </div>*/
 /* */
-/*     <table>*/
-/*         <tbody>*/
-/*             <tr>*/
-/*                 <th>Id</th>*/
-/*                 <td>{{ trip.id }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Name</th>*/
-/*                 <td>{{ trip.name }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Description</th>*/
-/*                 <td>{{ trip.description }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Urlpicture</th>*/
-/*                 <td>{{ trip.urlPicture }}</td>*/
-/*             </tr>*/
-/*             <tr>*/
-/*                 <th>Price</th>*/
-/*                 <td>{{ trip.price }}</td>*/
-/*             </tr>*/
-/*         </tbody>*/
-/*     </table>*/
-/* */
-/*     <ul>*/
-/*         <li>*/
-/*             <a href="{{ path('trip_index') }}">Back to the list</a>*/
-/*         </li>*/
-/*         <li>*/
-/*             <a href="{{ path('trip_edit', { 'id': trip.id }) }}">Edit</a>*/
-/*         </li>*/
-/*         <li>*/
-/*             {{ form_start(delete_form) }}*/
-/*                 <input type="submit" value="Delete">*/
-/*             {{ form_end(delete_form) }}*/
-/*         </li>*/
-/*     </ul>*/
 /* {% endblock %}*/
 /* */

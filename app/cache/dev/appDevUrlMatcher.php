@@ -154,6 +154,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_trip_edit:
 
+            // update_trip
+            if ($pathinfo === '/trip/trip/update') {
+                return array (  '_controller' => 'TripBundle\\Controller\\TripController::updateAction',  '_route' => 'update_trip',);
+            }
+
             // trip_delete
             if (preg_match('#^/trip/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'DELETE') {

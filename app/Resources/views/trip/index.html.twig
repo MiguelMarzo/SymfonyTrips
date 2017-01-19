@@ -12,7 +12,7 @@
                     <h4><a href="{{ path('trip_show', { 'id': trip.id }) }}">Nombre del viaje: {{ trip.name }}</a>                     
                         <a href="{{ path('trip_delete', { 'id': trip.id }) }}"><span class="glyphicon glyphicon-trash"></span></a>
                     </h4>
-                    <p class="description">Descripción</p>
+                    <p class="description">{{ trip.description }}</p>
                     <a href="{{ path('trip_show', { 'id': trip.id }) }}">Ver más...</a>
                 </div>                              
             </div>
