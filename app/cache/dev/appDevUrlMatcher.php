@@ -105,84 +105,81 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // trip_index
+        if (rtrim($pathinfo, '/') === '') {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_trip_index;
+            }
+
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'trip_index');
+            }
+
+            return array (  '_controller' => 'TripBundle\\Controller\\TripController::indexAction',  '_route' => 'trip_index',);
+        }
+        not_trip_index:
+
         if (0 === strpos($pathinfo, '/trip')) {
-            // trip_index
-            if (rtrim($pathinfo, '/') === '/trip') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_trip_index;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'trip_index');
-                }
-
-                return array (  '_controller' => 'TripBundle\\Controller\\TripController::indexAction',  '_route' => 'trip_index',);
-            }
-            not_trip_index:
-
-            if (0 === strpos($pathinfo, '/trip/trip')) {
-                // trip_create
-                if ($pathinfo === '/trip/trip/create') {
-                    return array (  '_controller' => 'TripBundle\\Controller\\TripController::createAction',  '_route' => 'trip_create',);
-                }
-
-                // trip_new
-                if ($pathinfo === '/trip/trip/new') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_trip_new;
-                    }
-
-                    return array (  '_controller' => 'TripBundle\\Controller\\TripController::newAction',  '_route' => 'trip_new',);
-                }
-                not_trip_new:
-
+            // trip_create
+            if ($pathinfo === '/trip/create') {
+                return array (  '_controller' => 'TripBundle\\Controller\\TripController::createAction',  '_route' => 'trip_create',);
             }
 
-            // trip_show
-            if (preg_match('#^/trip/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_trip_show;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'trip_show')), array (  '_controller' => 'TripBundle\\Controller\\TripController::showAction',));
-            }
-            not_trip_show:
-
-            // trip_edit
-            if (preg_match('#^/trip/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            // trip_new
+            if ($pathinfo === '/trip/new') {
                 if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_trip_edit;
+                    goto not_trip_new;
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'trip_edit')), array (  '_controller' => 'TripBundle\\Controller\\TripController::editAction',));
+                return array (  '_controller' => 'TripBundle\\Controller\\TripController::newAction',  '_route' => 'trip_new',);
             }
-            not_trip_edit:
+            not_trip_new:
 
-            // update_trip
-            if ($pathinfo === '/trip/trip/update') {
-                return array (  '_controller' => 'TripBundle\\Controller\\TripController::updateAction',  '_route' => 'update_trip',);
-            }
+        }
 
-            // trip_delete
-            if (preg_match('#^/trip/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_trip_delete;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'trip_delete')), array (  '_controller' => 'TripBundle\\Controller\\TripController::deleteAction',));
-            }
-            not_trip_delete:
-
-            // search_trip
-            if ($pathinfo === '/trip/trip/search') {
-                return array (  '_controller' => 'TripBundle\\Controller\\TripController::searchAction',  '_route' => 'search_trip',);
+        // trip_show
+        if (preg_match('#^/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_trip_show;
             }
 
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'trip_show')), array (  '_controller' => 'TripBundle\\Controller\\TripController::showAction',));
+        }
+        not_trip_show:
+
+        // trip_edit
+        if (preg_match('#^/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_trip_edit;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'trip_edit')), array (  '_controller' => 'TripBundle\\Controller\\TripController::editAction',));
+        }
+        not_trip_edit:
+
+        // update_trip
+        if ($pathinfo === '/trip/update') {
+            return array (  '_controller' => 'TripBundle\\Controller\\TripController::updateAction',  '_route' => 'update_trip',);
+        }
+
+        // trip_delete
+        if (preg_match('#^/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                goto not_trip_delete;
+            }
+
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'trip_delete')), array (  '_controller' => 'TripBundle\\Controller\\TripController::deleteAction',));
+        }
+        not_trip_delete:
+
+        // search_trip
+        if ($pathinfo === '/trip/search') {
+            return array (  '_controller' => 'TripBundle\\Controller\\TripController::searchAction',  '_route' => 'search_trip',);
         }
 
         // trip_homepage

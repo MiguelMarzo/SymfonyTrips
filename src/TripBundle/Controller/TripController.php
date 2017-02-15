@@ -12,7 +12,7 @@ use TripBundle\Form\TripType;
 /**
  * Trip controller.
  *
- * @Route("/trip")
+ * @Route("/")
  */
 class TripController extends Controller {
 

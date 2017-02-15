@@ -691,3 +691,12 @@ f502d8,::1,POST,http://localhost:8000/app_dev.php/trip/trip/search,1484832078,,2
 445e4d,::1,GET,http://localhost:8000/app_dev.php/trip/trip/search,1484832159,92252e,200
 92252e,::1,POST,http://localhost:8000/app_dev.php/trip/trip/search,1484832159,,500
 207e6d,::1,POST,http://localhost:8000/app_dev.php/trip/trip/search,1484832183,,200
+8d3fc1,::1,GET,http://localhost:8000/app_dev.php/,1486557059,,200
+04a6c6,::1,GET,http://localhost:8000/app_dev.php/trip/,1486557068,,200
+8d35e9,::1,GET,http://localhost:8000/app_dev.php/trip/trip/create,1486557070,,200
+09c82b,::1,GET,http://localhost:8000/app_dev.php/trip/,1486557074,,200
+2a1294,::1,GET,http://localhost:8000/app_dev.php/trip/trip/create,1486557076,,200
+222702,::1,GET,http://localhost:8000/app_dev.php/trip/,1486557080,,200
+183920,::1,GET,http://localhost:8000/app_dev.php/,1487162239,,200
+11a155,::1,GET,http://localhost:8000/app_dev.php/trip/,1487162252,,200
+5fc40b,::1,GET,http://localhost:8000/app_dev.php/,1487162295,,200
